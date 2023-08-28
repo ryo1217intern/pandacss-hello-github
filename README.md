@@ -1,6 +1,6 @@
 # pandacssを使ってNext.JS環境でcssする
 ## とりあえずyarnする
-~zsh~
+`zsh`
 ```
 yarn create next-app
 ```
