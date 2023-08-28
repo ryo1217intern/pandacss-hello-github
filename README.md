@@ -13,3 +13,40 @@ yarn add -D @pandacss/dev
 yarn panda init -postcss
 ```
 これによってpandacssをinstall&initすることができる.
+
+## 各ファイルをpandacss用に書き換える
+
+1. package.jsonを変更する
+`package.json`
+```
+"scripts": {
+    "prepare": "panda codegen",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+```
+`"prepare": "panda codegen",`を追加する.
+
+2. .gitignoreを次のように変更する.
+`.gitignore`
+```
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/styled-system
+```
+`/styled-system`を追加する.
+
+3. src/globals.cssを次のように変更する.
+`globals.css`
+```
+@layer reset, base, tokens, recipies, utilities;
+```
+
+globals.css内の全てコードを削除して上記のコードに書き換える.
+
+4. page.module.cssを削除する.
+`src/page.module.css`はtailwindcssを使わないように作られるファイルであり今回は必要ないので削除する.
