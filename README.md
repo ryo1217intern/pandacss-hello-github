@@ -46,7 +46,7 @@ yarn panda init -postcss
 
 `globals.css`
 ```
-@layer reset, base, tokens, recipies, utilities;
+@layer reset, base, tokens, recipes, utilities;
 ```
 
 globals.css内の全てコードを削除して上記のコードに書き換える.
