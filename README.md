@@ -17,6 +17,7 @@ yarn panda init -postcss
 ## 各ファイルをpandacss用に書き換える
 
 1. package.jsonを変更する
+
 `package.json`
 ```
 "scripts": {
@@ -30,6 +31,7 @@ yarn panda init -postcss
 `"prepare": "panda codegen",`を追加する.
 
 2. .gitignoreを次のように変更する.
+
 `.gitignore`
 ```
 # dependencies
@@ -41,6 +43,7 @@ yarn panda init -postcss
 `/styled-system`を追加する.
 
 3. src/globals.cssを次のように変更する.
+
 `globals.css`
 ```
 @layer reset, base, tokens, recipies, utilities;
@@ -49,4 +52,5 @@ yarn panda init -postcss
 globals.css内の全てコードを削除して上記のコードに書き換える.
 
 4. page.module.cssを削除する.
+
 `src/page.module.css`はtailwindcssを使わないように作られるファイルであり今回は必要ないので削除する.
