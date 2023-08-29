@@ -54,3 +54,20 @@ globals.css内の全てコードを削除して上記のコードに書き換え
 4. page.module.cssを削除する.
 
 `src/page.module.css`はtailwindcssを使わないように作られるファイルであり今回は必要ないので削除する.
+
+# Pandacss公式ドキュメントのconcenptを読んで実践してみる.
+## CascadeLayersについて.
+一つの要素に対してcssを複数適用する場面があると考えられる.
+
+（例えば通常時は白色だがカーソルが合わさったら黒色になるなど）
+
+その時の適用順序に関してCascadeLayersを利用して順序整理するためブラウザがCascadeLayersにサポートされている必要がある.
+
+具体的な優先順位は次のようになる.
+
+1. `utilities`
+1. `recipes`
+1. `tokens`
+1. `base`
+1. `reset`
+
