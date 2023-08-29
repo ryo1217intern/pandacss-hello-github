@@ -71,3 +71,37 @@ globals.css内の全てコードを削除して上記のコードに書き換え
 1. `base`
 1. `reset`
 
+## アトミックスタイル
+tailwindcssのような書き方でcssを当てることができる.
+```page.tsx
+import {css} from '../../styled-system/css'
+
+const styled = css({
+    fontSize:'8xl',
+    fontWeight:'bold'
+});
+
+export default function Atomic() {
+    return (
+        <div className = {styled}>
+            Hello World
+        </div>
+    );
+};
+```
+これは一度styledで定数化し使いまわせるようにしているがアトミックスタイルではそれぞれのdivに当てることもできる.
+```
+import {css} from '../../styled-system/css'
+
+export default function Atomic(){
+  return (
+    <div className = {css({
+      fontSize:'8xl',
+      fontWeight:'bold'
+    })}>
+      Hello World
+    </div>
+  )
+}
+```
+
